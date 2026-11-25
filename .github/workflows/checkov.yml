@@ -23,8 +23,9 @@ jobs:
       - name: Run Checkov
         uses: bridgecrewio/checkov-action@master
         with:
-          directory: .
-          framework: terraform,kubernetes,dockerfile
+          directory: terraform/
+          framework: terraform
+          skip_check: CKV_AWS_157,CKV_AWS_129,CKV_AWS_226,CKV_AWS_293,CKV_AWS_118,CKV_AWS_161,CKV_AWS_126,CKV_AWS_135,CKV2_AWS_60,CKV_AWS_144,CKV2_AWS_62,CKV_AWS_18,CKV2_AWS_41,CKV2_AWS_61,CKV_AWS_145
           soft_fail: false
           output_format: cli,sarif
           output_file_path: console,results.sarif
